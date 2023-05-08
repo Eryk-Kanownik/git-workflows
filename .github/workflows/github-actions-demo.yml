@@ -1,0 +1,23 @@
+name: Workflow test
+on: [push]
+jobs:
+  Python Version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v4
+      - name: Check python version
+        run: python --version
+
+  Pylint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Python
+        uses: actions/setup-python@v4
+      - name: Requirements
+        run: py -m pip install requirements.txt
+      - name: Pylint
+        run: py -m pip install pylint
+      - name: Test
+        run: py -m pylint app.py
