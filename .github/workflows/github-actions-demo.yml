@@ -1,14 +1,14 @@
 name: Workflow test
 on: [push]
 jobs:
-  Python Version:
+  python version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-python@v4
       - name: Check python version
         run: python --version
 
-  Pylint:
+  pylint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
