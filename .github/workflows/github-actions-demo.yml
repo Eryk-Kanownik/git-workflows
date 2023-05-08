@@ -16,7 +16,7 @@ jobs:
       - name: Python
         uses: actions/setup-python@v4
       - name: Requirements
-        run: py -m pip install requirements.txt
+        run: py -m pip install -r requirements.txt
       - name: Pylint
         run: py -m pip install pylint
       - name: Test
